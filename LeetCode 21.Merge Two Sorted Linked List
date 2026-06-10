@@ -14,3 +14,27 @@ Create a brand new "Dummy" starting node. Loop through your newly sorted collect
 
 4. Return the Result
 Return the node right after your dummy node, which represents the head of your perfectly merged and sorted linked list.
+
+Optimized Approach:
+1. Create a "Dummy" Node
+Create a fake node (often called a dummy node) to act as the permanent anchor for the start of your new list. You also create a moving pointer (let's call it tail) that starts at this dummy node. This tail pointer will track the end of our newly merged list.
+
+2. Compare the Front Elements
+Look at the heads of both lists (list1 and list2).
+
+Whichever node has the smaller value gets attached to the tail.next.
+
+Move that specific list's pointer forward by one node.
+
+Move your tail pointer forward by one node.
+
+3. Repeat
+Keep repeating Step 2 inside a loop as long as both list1 and list2 have nodes left to compare.
+
+4. Clean up the Leftovers
+Eventually, one of the lists will run out of nodes first. Because the lists were already sorted, any nodes remaining in the other list are guaranteed to be larger than everything we've merged so far.
+
+Simply point tail.next directly to the remaining part of the unfinished list.
+
+5. Return the Head
+The actual sorted list starts right after your fake anchor. Return dummy.next.
