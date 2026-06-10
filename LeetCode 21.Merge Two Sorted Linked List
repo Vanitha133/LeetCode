@@ -1,0 +1,16 @@
+The problem asks you to take two sorted linked lists and merge them into one single sorted linked list.
+
+A Brute Force approach to this problem bypasses the clever pointer manipulation of linked lists and treats it like a basic array/sorting problem. The core idea is: Extract everything, throw it into a collection, sort it, and rebuild a new list.
+
+Step-by-Step Brute Force Approach
+1. Extract All Elements
+Create a dynamic collection (like an ArrayList in Java or a List in Python) to hold all the numbers. Iterate through the first linked list and copy every node's value into your collection. Then, iterate through the second linked list and do the exact same thing.
+
+2. Sort the Collection
+Now that you have all the numbers from both lists sitting in one place, use a standard sorting algorithm (or a built-in library function like Collections.sort()) to sort the entire collection in ascending order.
+
+3. Rebuild the Linked List
+Create a brand new "Dummy" starting node. Loop through your newly sorted collection of numbers. For every number, create a new linked list node and chain it to the back of your new list.
+
+4. Return the Result
+Return the node right after your dummy node, which represents the head of your perfectly merged and sorted linked list.
